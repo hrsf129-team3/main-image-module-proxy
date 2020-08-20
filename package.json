@@ -1,0 +1,26 @@
+{
+  "name": "main-image-module-proxy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon proxy_server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hrsf129-team3/main-image-module-proxy.git"
+  },
+  "author": "maureen lee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hrsf129-team3/main-image-module-proxy/issues"
+  },
+  "homepage": "https://github.com/hrsf129-team3/main-image-module-proxy#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4",
+    "webpack": "^4.44.1"
+  }
+}
