@@ -1,20 +1,62 @@
+<!DOCTYPE html>
 <html>
 
 <head>
-
+  <meta charset="UTF-8" />
+  <title>Proxy Server</title>
+  <link rel="stylesheet" href="./styles.css">
 </head>
 
 <body>
-  <div id="app">
-    Proxy server is not loading
-  </div>
-  <div id="review-app"></div>
-  <div id="recommended-products"></div>
+  <div id="product-page">
 
-  <script type="text/javascript" src="http://localhost:3007/bundle.js"></script>
-  <script type="text/javascript" src="http://localhost:3000/bundle.js"></script>
-  <script type="text/javascript" src="http://localhost:4000/products/:id/bundle.js"></script>
-  <!-- <script type="text/javascript" src="bundle.js"></script>
-  <script type="text/javascript" src="bundle.js"></script> -->
+    <div id="header">
+      <img src="https://etsy-main-image-module.s3-us-west-1.amazonaws.com/etsy-header.png">
+    </div>
+
+    <div id="middle">
+
+      <div id="left-side">
+        <div id="app">
+          If you're reading this, Maureen's app is not connected.
+        </div>
+        <div id="review-app">
+          If you're reading this, Reed's app is not connected.
+        </div>
+      </div>
+
+      <div id="checkout-right-side">
+        <img src="https://etsy-main-image-module.s3-us-west-1.amazonaws.com/etsy-side1.png" />
+        <img src="https://etsy-main-image-module.s3-us-west-1.amazonaws.com/etsy-side2.png" />
+        <img src="https://etsy-main-image-module.s3-us-west-1.amazonaws.com/etsy-side3.png" />
+        <img src="https://etsy-main-image-module.s3-us-west-1.amazonaws.com/etsy-side4.png" />
+      </div>
+
+    </div>
+
+    <div id="seller-products">
+      <img src="https://etsy-main-image-module.s3-us-west-1.amazonaws.com/etsy-lower1.png" />
+    </div>
+
+    <div id="ads">
+      <img src="https://etsy-main-image-module.s3-us-west-1.amazonaws.com/etsy-lower2.png" />
+    </div>
+
+    <div id="recommended-products">
+      If you're reading this, Jusheen's app is not connected.
+    </div>
+
+    <div id="page-end">
+      <img src="https://etsy-main-image-module.s3-us-west-1.amazonaws.com/etsy-end1.png">
+      <img src="https://etsy-main-image-module.s3-us-west-1.amazonaws.com/etsy-end2.png">
+    </div>
+
+  </div>
+
+    <script src="http://54.151.63.254:3007/bundle.js"></script>
+    <script src="http://54.67.74.229:3000/bundle.js"></script>
+    <script src="http://18.144.176.174:4000/products/:id/bundle.js"></script>
+
 </body>
+
 </html>

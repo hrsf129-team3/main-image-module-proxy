@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+
+  image_proxy_server:
+    build: .
+    ports:
+      - '3007:3007'
+

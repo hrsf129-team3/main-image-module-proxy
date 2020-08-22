@@ -1,52 +1,44 @@
 const axios = require('axios');
 const express = require('express');
 const app = express();
-const PORT = 3717;
+const PORT = 4017;
 const path = require('path');
 
 //middleware
 app.use('/products/:id', express.json());
-app.use('/products/:id', express.static(path.join(__dirname, './client')))
+app.use('/products/:id', express.static(path.join(__dirname, '../client')));
 
-//routes
-
-//get request is coming from bundle.js
-//main image module
-app.get('/product1info', function (req, res, next) {
-  console.log("hitting server.js proxy")
-  axios.get('http://localhost:3007/product1info')
-    .then((results) => {
-      console.log("results", results.data);
-      res.send(results.data)})
-    .catch((err) => {console.log(err)});
-});
-
-//review module
-app.get('/reviews', function(req, res) {
-  axios.get('http://localhost:3000/reviews')
-    .then((results) => {
-      console.log("results", results.data);
-      res.send(results.data)})
-    .catch((err) => {console.log(err)});
-});
-
-app.get('/newest', function(req, res) {
-  axios.get('http://localhost:3000/newest')
-    .then((results) => {
-      console.log("results", results.data);
-      res.send(results.data)})
-    .catch((err) => {console.log(err)});
-});
-
-// recommended products
+// routes
 app.get('/data/:id', (req, res) => {
-  var id = req.params.id;
-  axios.get(`http://localhost:4000/data/${id}`)
-    .then((results) => {
-      console.log("results", results.data)
-      res.send(results.data)})
-    .catch((err) => {console.log(err)});
+  let id = req.params.id;
+  axios.get(`http://18.144.176.174:4000/data/${id}`)
+    .then((data) => {
+      console.log('success')
+      res.send(data.data);
+    })
+    .catch(console.log)
 });
+app.get('/reviews', (req, res) => {
+  axios.get('http://54.67.74.229:3000/reviews')
+    .then((data) => {
+      res.send(data.data);
+    })
+    .catch(console.log)
+})
+app.get('/newest', (req, res) => {
+  axios.get('http://54.67.74.229:3000/newest')
+    .then((data) => {
+      res.send(data.data);
+    })
+    .catch(console.log)
+})
+app.get('/product1info', (req, res) => {
+  axios.get('http://54.151.63.254:3007/product1info')
+    .then((data) => {
+      res.send(data.data);
+    })
+    .catch(console.log)
+})
 
 //start server
 app.listen(PORT, (err) => {
