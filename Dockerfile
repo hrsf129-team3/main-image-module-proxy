@@ -15,7 +15,7 @@ RUN yarn install
 RUN yarn global add nodemon
 
 # What port will the container talk to the outside world with once created?
-EXPOSE 4007
+EXPOSE 4017
 
 # How do you start your app?
 CMD [ "npm", "run", "start" ]

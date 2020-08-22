@@ -5,5 +5,5 @@ services:
   image_proxy_server:
     build: .
     ports:
-      - '4007:4007'
+      - '4017:4017'
 
