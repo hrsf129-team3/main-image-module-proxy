@@ -25,6 +25,7 @@ app.get('/reviews', (req, res) => {
     })
     .catch(console.log)
 })
+
 app.get('/newest', (req, res) => {
   axios.get('http://54.67.74.229:3000/newest')
     .then((data) => {
@@ -32,13 +33,24 @@ app.get('/newest', (req, res) => {
     })
     .catch(console.log)
 })
-app.get('/product1info', (req, res) => {
-  axios.get('http://54.151.63.254:3007/product1info')
+
+
+app.get('/images/:id', function (req, res, next) {
+  var productID = req.params.id;
+  axios.get(`http://54.151.63.254:3007/images/${productID}`)
     .then((data) => {
       res.send(data.data);
     })
     .catch(console.log)
 })
+
+// app.get('/product1info', (req, res) => {
+//   axios.get('http://54.151.63.254:3007/product1info')
+//     .then((data) => {
+//       res.send(data.data);
+//     })
+//     .catch(console.log)
+// })
 
 //start server
 app.listen(PORT, (err) => {
